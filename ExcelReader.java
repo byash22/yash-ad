@@ -55,6 +55,17 @@ public class ExcelReader {
         // Create a DataFormatter to format and get each cell's value as String
         DataFormatter dataFormatter = new DataFormatter();
 
+        // Get number of columns in each row 
+        int numberOfColumns = 0;
+        Iterator<Row> rowIterator1 = sheet.rowIterator();
+        if (rowIterator1.hasNext())
+        {
+            Row headerRow = (Row) rowIterator1.next();
+            //get the number of cells in the header row
+            numberOfColumns = headerRow.getPhysicalNumberOfCells();
+        }
+        System.out.println("\n\nNumber of columns in each row: "+numberOfColumns);
+        
         // 1. You can obtain a rowIterator and columnIterator and iterate over them
         System.out.println("\n\nIterating over Rows and Columns using Iterator\n");
         Iterator<Row> rowIterator = sheet.rowIterator();
