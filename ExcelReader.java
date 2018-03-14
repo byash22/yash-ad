@@ -61,7 +61,7 @@ public class ExcelReader {
         if (rowIterator1.hasNext())
         {
             Row headerRow = (Row) rowIterator1.next();
-            //get the number of cells in the header row
+            //get the number of column in the header row
             numberOfColumns = headerRow.getPhysicalNumberOfCells();
         }
         System.out.println("\n\nNumber of columns in each row: "+numberOfColumns);
