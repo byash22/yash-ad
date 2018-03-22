@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -49,36 +48,8 @@ public class WorkbookReader {
 
     // Create a DataFormatter to format and get each cell's value as String
    DataFormatter dataFormatter = new DataFormatter();
-       
-  
-    // 1. You can obtain a rowIterator and columnIterator and iterate over them
-    System.out.println("\nIterating over Rows and Columns using Iterator\n");
-    Iterator<Row> rowIterator = sheet.rowIterator();
-    while (rowIterator.hasNext()) {
-        Row row = rowIterator.next();
 
-        // Now let's iterate over the columns of the current row
-        Iterator<Cell> cellIterator = row.cellIterator();
-
-        while (cellIterator.hasNext()) {
-            Cell cell = cellIterator.next();
-            String cellValue = dataFormatter.formatCellValue(cell);
-            System.out.print(cellValue + "\t");
-        }
-        System.out.println();
-    }
-
-// Using for-each loop for iterating
-    System.out.println("\nIterating over Rows and Columns using for-each loop\n");
-    for (Row row: sheet) {
-        for(Cell cell: row) {
-            String cellValue = dataFormatter.formatCellValue(cell);
-            System.out.print(cellValue + "\t");
-        }
-        System.out.println();
-    }
-
-    // Using Java 8 forEach loop
+    // Using Java 8 forEach loop 
     System.out.println("\nIterating over Rows and Columns using Java 8 forEach loop\n");
     sheet.forEach(row -> {
         row.forEach(cell -> {
@@ -87,6 +58,7 @@ public class WorkbookReader {
         });
         System.out.println();
     });
+    
     System.out.println("\nSheet 1");
     int x=sheet.getRow(0).getPhysicalNumberOfCells();
     String a=Integer.toString(x);
