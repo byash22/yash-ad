@@ -78,7 +78,7 @@ public class WorkbookReader {
         System.out.println();
     }
 
-    // Using Java 8 forEach loop with lambda
+    // Using Java 8 forEach loop
     System.out.println("\nIterating over Rows and Columns using Java 8 forEach loop\n");
     sheet.forEach(row -> {
         row.forEach(cell -> {
