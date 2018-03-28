@@ -1,5 +1,5 @@
 
-public class UnsortedString {
+public class SortedString {
 
 		private static String[] data  = {"Vaibhav","Sumit","Hitest","Shubham","Puneet","Aastik","Muskaam"};
 		
